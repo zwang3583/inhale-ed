@@ -3,8 +3,11 @@
     <v-navigation-drawer
       v-model="drawer"
       app
-      clipped
     >
+      <v-avatar color="indigo">
+        <v-icon dark>mdi-account-circle</v-icon>
+      </v-avatar>
+      
       <v-list dense>
         <v-list-item link>
           <v-list-item-action>
@@ -27,7 +30,7 @@
 
     <v-app-bar
       app
-      clipped-left
+      clipped
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-toolbar-title>Inhale-ED</v-toolbar-title>
