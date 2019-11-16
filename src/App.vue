@@ -1,8 +1,6 @@
 <template>
   <v-app>
     <router-view />
-
-
     <v-content>
       <HelloWorld/>
     </v-content>
