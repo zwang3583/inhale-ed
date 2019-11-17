@@ -11,7 +11,7 @@
       </v-list-item>
       <v-list-item>
         <v-list-item-content>
-        <v-list-item-title>John Doe</v-list-item-title>
+        <v-list-item-title>Doctor</v-list-item-title>
         </v-list-item-content>
       </v-list-item>
       <v-list dense>
@@ -48,56 +48,6 @@
           </v-list-item-content>
         </v-list-item>
       </v-list>
-
-      <template v-slot:append>
-        <v-list-item dense>
-          <v-list-item-title>Contact Information</v-list-item-title>
-        </v-list-item>
-        <v-divider/>
-        <v-list two-line dense>
-          <v-list-item >
-            <v-list-item-icon>
-              <v-icon>mdi-phone</v-icon>
-            </v-list-item-icon>
-
-            <v-list-item-content>
-              <v-list-item-title>(650) 555-1234</v-list-item-title>
-              <v-list-item-subtitle>Primary Care Physician</v-list-item-subtitle>
-            </v-list-item-content>
-
-          </v-list-item>
-
-          <v-list-item>
-            <v-list-item-action></v-list-item-action>
-
-            <v-list-item-content>
-              <v-list-item-title>(323) 555-6789</v-list-item-title>
-              <v-list-item-subtitle>Pulmonologist</v-list-item-subtitle>
-            </v-list-item-content>
-
-          </v-list-item>
-          <v-divider inset></v-divider>
-          <v-list-item>
-            <v-list-item-icon>
-              <v-icon>mdi-email</v-icon>
-            </v-list-item-icon>
-
-            <v-list-item-content>
-              <v-list-item-title>pcp@example.com</v-list-item-title>
-              <v-list-item-subtitle>Primary Care Physician</v-list-item-subtitle>
-            </v-list-item-content>
-          </v-list-item>
-
-          <v-list-item >
-            <v-list-item-action></v-list-item-action>
-
-            <v-list-item-content>
-              <v-list-item-title>pulmo@example.com</v-list-item-title>
-              <v-list-item-subtitle>Pulmonologist</v-list-item-subtitle>
-            </v-list-item-content>
-          </v-list-item>
-        </v-list>
-      </template>
     </v-navigation-drawer>
 
     <v-app-bar

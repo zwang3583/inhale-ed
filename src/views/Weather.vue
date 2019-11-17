@@ -106,6 +106,10 @@
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-toolbar-title>Inhale-ED</v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-btn icon :to = "{ path: 'doctor'}">
+        <v-icon>mdi-doctor</v-icon>
+      </v-btn>
     </v-app-bar>
 
     <v-content>
@@ -113,7 +117,7 @@
         class="fill-height"
         fluid
       >
-      <Weather />
+      <AirQuality />
       </v-container>
     </v-content>
 

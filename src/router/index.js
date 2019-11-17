@@ -15,7 +15,7 @@ const router = new Router({
     {
       path: "/doctor",
       name: "doctor",
-      component: () => import("../views/DoctorUI"),
+      component: () => import("../views/DoctorUI.vue"),
     },
     {
       path: "/weather",

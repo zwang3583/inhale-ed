@@ -106,6 +106,10 @@
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-toolbar-title>Inhale-ED</v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-btn icon :to = "{ path: 'doctor'}">
+        <v-icon>mdi-doctor</v-icon>
+      </v-btn>
     </v-app-bar>
 
     <v-content>
@@ -113,7 +117,7 @@
         class="fill-height"
         fluid
       >
-<iframe width="100%" height="100%" src="https://www.youtube.com/embed/Rdb3p9RZoR4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Rdb3p9RZoR4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </v-container>
     </v-content>
 
