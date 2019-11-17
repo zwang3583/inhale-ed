@@ -36,7 +36,7 @@
             <v-icon>mdi-information-outline</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>Info</v-list-item-title>
+            <v-list-item-title>About Asthma</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
         <v-list-item :to = "{ path: 'weather'}">
@@ -117,7 +117,7 @@
         class="fill-height"
         fluid
       >
-      <h1>Weather!</h1>
+      <AirQuality/>
       </v-container>
     </v-content>
 
@@ -128,6 +128,7 @@
 </template>
 
 <script>
+  import AirQuality from '../components/AirQuality'
   export default {
     props: {
       source: String,
@@ -138,7 +139,7 @@
     }),
 
     components: {
-      //
+      AirQuality
     }
   }
 </script>

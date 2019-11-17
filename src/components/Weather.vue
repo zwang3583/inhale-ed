@@ -1,5 +1,7 @@
 <template>
-  <weather/>
+  <weather
+    text-color="#ffffff"
+    />
 </template>
 
 <script>
