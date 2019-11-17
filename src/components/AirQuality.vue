@@ -1,45 +1,43 @@
 <template>
 	<v-container justify="center">
-		<v-row>
-			<v-col class="sm-2"><span  id="city-aqi-container"></span></v-col>
-			<v-col class="sm-10"><gmap /> </v-col>
-		</v-row>
-
-	
+	<span  id="city-aqi-container"></span>
+	<div  id='map'  style='height:380px;'  /> 
  </v-container>
 </template>
 
 
 <script>
-import gmap from '../components/gmap'
+
 	_aqiFeed({  
 		display: '%details',
   container:"city-aqi-container",  
   city:"boston",  
 });  
 
-		export default{
+
+var  map  =  new  google.maps.Map(document.getElementById('map'),  {  
+        center:  new  google.maps.LatLng(51.505,  -0.09),  
+        mapTypeId:  google.maps.MapTypeId.ROADMAP,  
+        zoom:  11  
+    });  
+
+                    var  t  =  new  Date().getTime();  
+var  waqiMapOverlay  =  new  google.maps.ImageMapType({  
+        getTileUrl:  function(coord,  zoom)  {  
+                  return  'https://tiles.waqi.info/tiles/usepa-aqi/'  +  zoom  +  "/"  +  coord.x  +  "/"  +  coord.y  +  "993cbc0bff55dface07dadaa1178f83f0463d501";  
+        },  
+        name:  "Air  Quality",  
+});  
+
+map.overlayMapTypes.insertAt(0,waqiMapOverlay);  
+
+	export default{
 		name: 'AirQuality',
-		components: {
-			gmap
-		}
 	}
 </script>
 
-
-
-
 <style scoped>
-  #map {
-    height: 100%;
-  }
-  html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
+.body{
 
-  .v-row, .container{
-  	height: 100%;
-  }
-</style>
+}
+	</style>}
