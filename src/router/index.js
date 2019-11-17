@@ -13,6 +13,11 @@ const router = new Router({
       component: () => import("../views/Home.vue"),
     },
     {
+      path: "/doctor",
+      name: "docor",
+      component: () => import("../views/DoctorUI"),
+    },
+    {
       path: "/calendar",
       name: "calendar",
       component: () => import("../views/Calendar.vue"),
