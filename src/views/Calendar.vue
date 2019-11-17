@@ -36,15 +36,14 @@
             <v-list-item-title>Info</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item :to = "{ path: 'weather'}">
+        <v-list-item :to="{ path: 'weather'}">
           <v-list-item-action>
             <v-icon>mdi-weather-cloudy</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title> Weather </v-list-item-title>
+            <v-list-item-title>Weather</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
- 
       </v-list>
 
       <template v-slot:append>
@@ -60,9 +59,7 @@
 
             <v-list-item-content>
               <v-list-item-title>(650) 555-1234</v-list-item-title>
-              <v-list-item-subtitle
-                >Primary Care Physician</v-list-item-subtitle
-              >
+              <v-list-item-subtitle>Primary Care Physician</v-list-item-subtitle>
             </v-list-item-content>
           </v-list-item>
 
@@ -82,9 +79,7 @@
 
             <v-list-item-content>
               <v-list-item-title>pcp@example.com</v-list-item-title>
-              <v-list-item-subtitle
-                >Primary Care Physician</v-list-item-subtitle
-              >
+              <v-list-item-subtitle>Primary Care Physician</v-list-item-subtitle>
             </v-list-item-content>
           </v-list-item>
 
@@ -119,7 +114,7 @@
 
 <script>
 import Calendar from "../components/Calendar.vue";
-import AirQuality from "../components/AirQuality"
+//import AirQuality from "../components/AirQuality"
 export default {
   props: {
     source: String
@@ -130,8 +125,8 @@ export default {
   }),
 
   components: {
-    Calendar,
-    AirQuality
+    Calendar
+    //AirQuality
   }
 };
 </script>
