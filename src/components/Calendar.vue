@@ -45,7 +45,7 @@
             <v-form @submit.prevent="addEvent">
               <v-select
                 :items="condition"
-                v-model="conditions"
+                v-model="condition"
                 label="Select your condition today! (Required)"
               ></v-select>
               <v-select
@@ -54,6 +54,7 @@
                 label="Did you smoke today? (Required)"
               ></v-select>
               <v-text-field
+                v-if="smoke == 'Yes'"
                 v-model="numcig"
                 type="counter"
                 label="If yes: number of cigarette you smoked"
@@ -168,6 +169,7 @@ export default {
     // pill: ["Yes", "No"],
     smoke: ["Yes", "No"],
     inhaler: ["Yes", "No"],
+    numcig:null,
 
     // name: null,
     // details: null,
@@ -193,6 +195,7 @@ export default {
       if (!start || !end) {
         return "";
       }
+      const condition = this.condition;
       const startMonth = this.monthFormatter(start);
       const endMonth = this.monthFormatter(end);
       const suffixMonth = startMonth === endMonth ? "" : endMonth;
@@ -258,10 +261,7 @@ export default {
           color: this.color
         });
         this.getEvents();
-        (this.condition = ""),
-          (this.pill = ""),
-          (this.smoke = ""),
-          (this.inhaler = "");
+        (this.condition = ""), (this.smoke = ""), (this.inhaler = "");
         //this.details = '',
         // (this.start = ""),
         // (this.startTime = "");
@@ -307,10 +307,10 @@ export default {
       }
       nativeEvent.stopPropagation();
     },
-    updateRange({ start, end }) {
-      this.start = start;
-      this.end = end;
-    },
+    // updateRange({ start, end }) {
+    //   //this.start = start;
+    //   //this.end = end;
+    // },
     nth(d) {
       return d > 3 && d < 21
         ? "th"

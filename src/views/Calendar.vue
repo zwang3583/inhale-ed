@@ -1,9 +1,6 @@
 <template>
   <v-app id="inspire">
-    <v-navigation-drawer
-      v-model="drawer"
-      app
-    >
+    <v-navigation-drawer v-model="drawer" app>
       <v-list-item>
         <v-list-item-avatar>
           <v-img src="@/assets/profile_placeholder.png"></v-img>
@@ -11,7 +8,7 @@
       </v-list-item>
       <v-list-item>
         <v-list-item-content>
-        <v-list-item-title>John Doe</v-list-item-title>
+          <v-list-item-title>John Doe</v-list-item-title>
         </v-list-item-content>
       </v-list-item>
       <v-list dense>
@@ -53,18 +50,19 @@
         <v-list-item dense>
           <v-list-item-title>Contact Information</v-list-item-title>
         </v-list-item>
-        <v-divider/>
+        <v-divider />
         <v-list two-line dense>
-          <v-list-item >
+          <v-list-item>
             <v-list-item-icon>
               <v-icon>mdi-phone</v-icon>
             </v-list-item-icon>
 
             <v-list-item-content>
               <v-list-item-title>(650) 555-1234</v-list-item-title>
-              <v-list-item-subtitle>Primary Care Physician</v-list-item-subtitle>
+              <v-list-item-subtitle
+                >Primary Care Physician</v-list-item-subtitle
+              >
             </v-list-item-content>
-
           </v-list-item>
 
           <v-list-item>
@@ -74,7 +72,6 @@
               <v-list-item-title>(323) 555-6789</v-list-item-title>
               <v-list-item-subtitle>Pulmonologist</v-list-item-subtitle>
             </v-list-item-content>
-
           </v-list-item>
           <v-divider inset></v-divider>
           <v-list-item>
@@ -84,11 +81,13 @@
 
             <v-list-item-content>
               <v-list-item-title>pcp@example.com</v-list-item-title>
-              <v-list-item-subtitle>Primary Care Physician</v-list-item-subtitle>
+              <v-list-item-subtitle
+                >Primary Care Physician</v-list-item-subtitle
+              >
             </v-list-item-content>
           </v-list-item>
 
-          <v-list-item >
+          <v-list-item>
             <v-list-item-action></v-list-item-action>
 
             <v-list-item-content>
@@ -100,20 +99,14 @@
       </template>
     </v-navigation-drawer>
 
-    <v-app-bar
-      app
-      clipped
-    >
+    <v-app-bar app clipped>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-toolbar-title>Inhale-ED</v-toolbar-title>
     </v-app-bar>
 
     <v-content>
-      <v-container
-        class="fill-height"
-        fluid
-      >
-      <Calendar/>
+      <v-container class="fill-height" fluid>
+        <Calendar />
       </v-container>
     </v-content>
 
@@ -124,18 +117,18 @@
 </template>
 
 <script>
-  import Calendar from '../components/Calendar'
-  export default {
-    props: {
-      source: String,
-    },
+import Calendar from "../components/Calendar.vue";
+export default {
+  props: {
+    source: String
+  },
 
-    data: () => ({
-      drawer: null,
-    }),
+  data: () => ({
+    drawer: null
+  }),
 
-    components: {
-      Calendar
-    }
+  components: {
+    Calendar
   }
+};
 </script>
