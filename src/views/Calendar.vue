@@ -119,7 +119,6 @@
 
 <script>
 import Calendar from "../components/Calendar.vue";
-import AirQuality from "../components/AirQuality"
 export default {
   props: {
     source: String
@@ -130,8 +129,7 @@ export default {
   }),
 
   components: {
-    Calendar,
-    AirQuality
+    Calendar
   }
 };
 </script>

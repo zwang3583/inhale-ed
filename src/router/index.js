@@ -37,6 +37,11 @@ const router = new Router({
       name: "HowTo",
       component: () => import("../views/HowTo.vue"),
     },
+    {
+      path: "/weather",
+      name: "weather",
+      component: () => import("../views/Weather.vue"),
+    },
   ]
 });
 
