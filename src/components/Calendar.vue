@@ -3,9 +3,7 @@
     <v-col>
       <v-sheet height="64">
         <v-toolbar flat color="black">
-          <v-btn color="green lighten-1" dark @click.stop="dialog = true"
-            >Enter your day!</v-btn
-          >
+          <v-btn color="green lighten-1" dark @click.stop="dialog = true">Enter your day!</v-btn>
           <v-btn outlined class="mr-4" @click="setToday">Today</v-btn>
           <v-btn fab text small @click="prev">
             <v-icon small>mdi-chevron-left</v-icon>
@@ -48,11 +46,7 @@
                 v-model="condition"
                 label="Select your condition today! (Required)"
               ></v-select>
-              <v-select
-                :items="smoke"
-                v-model="smoke"
-                label="Did you smoke today? (Required)"
-              ></v-select>
+              <v-select :items="smoke" v-model="smoke" label="Did you smoke today? (Required)"></v-select>
               <v-text-field
                 v-if="smoke == 'Yes'"
                 v-model="numcig"
@@ -60,19 +54,14 @@
                 label="If yes: number of cigarette you smoked"
               ></v-text-field>
               <!-- <v-select :items="pill" v-model="taken_pill" label="Taken your pills? (Required)"></v-select> -->
-              <v-select
-                :items="inhaler"
-                v-model="inhaler"
-                label="Used your inhaler? (Required)"
-              ></v-select>
+              <v-select :items="inhaler" v-model="inhaler" label="Used your inhaler? (Required)"></v-select>
               <v-row justify="center"></v-row>
               <v-btn
                 type="submit"
                 color="green lighten-1"
                 class="mr-4"
                 @click.stop="dialog = false"
-                >create event</v-btn
-              >
+              >create event</v-btn>
             </v-form>
           </v-container>
         </v-card>
@@ -108,9 +97,7 @@
               <div class="flex-grow-1"></div>
             </v-toolbar>
             <v-card-text>
-              <form v-if="currentlyEditing !== selectedEvent.id">
-                {{ selectedEvent.details }}
-              </form>
+              <form v-if="currentlyEditing !== selectedEvent.id">{{ selectedEvent.details }}</form>
               <form v-else>
                 <textarea-autosize
                   v-model="selectedEvent.details"
@@ -122,22 +109,13 @@
               </form>
             </v-card-text>
             <v-card-actions>
-              <v-btn text color="green lighten-1" @click="selectedOpen = false"
-                >close</v-btn
-              >
+              <v-btn text color="green lighten-1" @click="selectedOpen = false">close</v-btn>
               <v-btn
                 v-if="currentlyEditing !== selectedEvent.id"
                 text
                 @click.prevent="editEvent(selectedEvent)"
-                >edit</v-btn
-              >
-              <v-btn
-                text
-                v-else
-                type="submit"
-                @click.prevent="updateEvent(selectedEvent)"
-                >Save</v-btn
-              >
+              >edit</v-btn>
+              <v-btn text v-else type="submit" @click.prevent="updateEvent(selectedEvent)">Save</v-btn>
             </v-card-actions>
           </v-card>
         </v-menu>
@@ -169,7 +147,7 @@ export default {
     // pill: ["Yes", "No"],
     smoke: ["Yes", "No"],
     inhaler: ["Yes", "No"],
-    numcig:null,
+    numcig: null,
 
     // name: null,
     // details: null,
@@ -178,7 +156,7 @@ export default {
     // startTime: null,
     // //endTime:null,
     // //end: null,
-    //color: '#1976D2', // default event color
+    color: "#1976D2", // default event color
     currentlyEditing: null,
     selectedEvent: {},
     selectedElement: null,
@@ -255,13 +233,21 @@ export default {
     async addEvent() {
       if (this.condition && this.smoke && this.inhaler) {
         await db.collection("patient").add({
-          condition: "",
-          smoke: "",
-          inhaler: "",
-          color: this.color
+          condition: this.condition,
+          smoke: this.smoke,
+          inhaler: this.inhaler,
+          numcig: this.numcig
+          //color: this.color
         });
-        this.getEvents();
-        (this.condition = ""), (this.smoke = ""), (this.inhaler = "");
+        //this.getEvents();
+        (this.condition = ""),
+          (this.smoke = ""),
+          (this.inhaler = ""),
+          (this.numcig = "");
+        alert("Succeessfully added");
+        //((this.condition = "")),
+        //(this.smoke = ""),
+        //(this.inhaler = "");
         //this.details = '',
         // (this.start = ""),
         // (this.startTime = "");
@@ -307,10 +293,10 @@ export default {
       }
       nativeEvent.stopPropagation();
     },
-    // updateRange({ start, end }) {
-    //   //this.start = start;
-    //   //this.end = end;
-    // },
+    updateRange({ start, end }) {
+      this.start = start;
+      this.end = end;
+    },
     nth(d) {
       return d > 3 && d < 21
         ? "th"
