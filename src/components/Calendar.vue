@@ -3,7 +3,9 @@
     <v-col>
       <v-sheet height="64">
         <v-toolbar flat color="white">
-          <v-btn color="green lighten-1" dark @click.stop="dialog = true">Enter your day!</v-btn>
+          <v-btn color="green lighten-1" dark @click.stop="dialog = true"
+            >Enter your day!</v-btn
+          >
           <v-btn outlined class="mr-4" @click="setToday">Today</v-btn>
           <v-btn fab text small @click="prev">
             <v-icon small>mdi-chevron-left</v-icon>
@@ -46,21 +48,30 @@
                 v-model="conditions"
                 label="Select your condition today! (Required)"
               ></v-select>
-              <v-select :items="smoke" v-model="smoke" label="Did you smoke today? (Required)"></v-select>
+              <v-select
+                :items="smoke"
+                v-model="smoke"
+                label="Did you smoke today? (Required)"
+              ></v-select>
               <v-text-field
                 v-model="numcig"
                 type="counter"
                 label="If yes: number of cigarette you smoked"
               ></v-text-field>
               <!-- <v-select :items="pill" v-model="taken_pill" label="Taken your pills? (Required)"></v-select> -->
-              <v-select :items="inhaler" v-model="inhaler" label="Used your inhaler? (Required)"></v-select>
+              <v-select
+                :items="inhaler"
+                v-model="inhaler"
+                label="Used your inhaler? (Required)"
+              ></v-select>
               <v-row justify="center"></v-row>
               <v-btn
                 type="submit"
                 color="green lighten-1"
                 class="mr-4"
                 @click.stop="dialog = false"
-              >create event</v-btn>
+                >create event</v-btn
+              >
             </v-form>
           </v-container>
         </v-card>
@@ -96,7 +107,9 @@
               <div class="flex-grow-1"></div>
             </v-toolbar>
             <v-card-text>
-              <form v-if="currentlyEditing !== selectedEvent.id">{{ selectedEvent.details }}</form>
+              <form v-if="currentlyEditing !== selectedEvent.id">
+                {{ selectedEvent.details }}
+              </form>
               <form v-else>
                 <textarea-autosize
                   v-model="selectedEvent.details"
@@ -108,13 +121,22 @@
               </form>
             </v-card-text>
             <v-card-actions>
-              <v-btn text color="green lighten-1" @click="selectedOpen = false">close</v-btn>
+              <v-btn text color="green lighten-1" @click="selectedOpen = false"
+                >close</v-btn
+              >
               <v-btn
                 v-if="currentlyEditing !== selectedEvent.id"
                 text
                 @click.prevent="editEvent(selectedEvent)"
-              >edit</v-btn>
-              <v-btn text v-else type="submit" @click.prevent="updateEvent(selectedEvent)">Save</v-btn>
+                >edit</v-btn
+              >
+              <v-btn
+                text
+                v-else
+                type="submit"
+                @click.prevent="updateEvent(selectedEvent)"
+                >Save</v-btn
+              >
             </v-card-actions>
           </v-card>
         </v-menu>
@@ -147,13 +169,13 @@ export default {
     smoke: ["Yes", "No"],
     inhaler: ["Yes", "No"],
 
-    name: null,
-    details: null,
-    start: null,
+    // name: null,
+    // details: null,
     // start: null,
-    startTime: null,
-    //endTime:null,
-    //end: null,
+    // // start: null,
+    // startTime: null,
+    // //endTime:null,
+    // //end: null,
     //color: '#1976D2', // default event color
     currentlyEditing: null,
     selectedEvent: {},
@@ -201,7 +223,7 @@ export default {
     allowedHours: v => v % 2,
 
     async getEvents() {
-      let snapshot = await db.collection("calEvent").get();
+      let snapshot = await db.collection("patient").get();
       let events = [];
       snapshot.forEach(doc => {
         let appData = doc.data();
@@ -229,7 +251,7 @@ export default {
     },
     async addEvent() {
       if (this.condition && this.smoke && this.inhaler) {
-        await db.collection("calEvent").add({
+        await db.collection("patient").add({
           condition: "",
           smoke: "",
           inhaler: "",
@@ -257,7 +279,7 @@ export default {
     },
     async updateEvent(ev) {
       await db
-        .collection("calEvent")
+        .collection("patient")
         .doc(this.currentlyEditing)
         .update({
           details: ev.details
@@ -266,7 +288,7 @@ export default {
     },
     async deleteEvent(ev) {
       await db
-        .collection("calEvent")
+        .collection("patient")
         .doc(ev)
         .delete();
       (this.selectedOpen = false), this.getEvents();
