@@ -8,6 +8,31 @@
     <title>inhale-ed</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css">
+    <script  type="text/javascript"  charset="utf-8">  
+    (function(w,d,t,f){  w[f]=w[f]||function(c,k,n){s=w[f],k=s['k']=(s['k']||(k?('&k='+k):''));s['c']=  
+    c=(c  instanceof  Array)?c:[c];s['n']=n=n||0;L=d.createElement(t),e=d.getElementsByTagName(t)[0];  
+    L.async=1;L.src='//feed.aqicn.org/feed/'+(c[n].city)+'/'+(c[n].lang||'')+'/feed.v1.js?n='+n+k;  
+    e.parentNode.insertBefore(L,e);  };  })(  window,document,'script','_aqiFeed'  );    
+</script>
+  <script  src="http://maps.google.cn/maps/api/js"></script>  
+    
+  <script>  
+        var  map  =  new  google.maps.Map(document.getElementById('map'),  {  
+                    center:  new  google.maps.LatLng(51.505,  -0.09),  
+                    mapTypeId:  google.maps.MapTypeId.ROADMAP,  
+                    zoom:  11  
+                });  
+    
+                                var  t  =  new  Date().getTime();  
+        var  waqiMapOverlay  =  new  google.maps.ImageMapType({  
+                    getTileUrl:  function(coord,  zoom)  {  
+                              return  'https://tiles.waqi.info/tiles/usepa-aqi/'  +  zoom  +  "/"  +  coord.x  +  "/"  +  coord.y  +  "993cbc0bff55dface07dadaa1178f83f0463d501";  
+                    },  
+                    name:  "Air  Quality",  
+          });  
+    
+        map.overlayMapTypes.insertAt(0,waqiMapOverlay);  
+  </script>
   </head>
   <body>
     <noscript>

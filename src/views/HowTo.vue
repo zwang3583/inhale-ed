@@ -39,12 +39,12 @@
             <v-list-item-title>Info</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item link>
+        <v-list-item :to = "{ path: 'weather'}">
           <v-list-item-action>
-            <v-icon>mdi-smoking</v-icon>
+            <v-icon>mdi-weather-cloudy</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>Do You Smoke?</v-list-item-title>
+            <v-list-item-title> Weather </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>

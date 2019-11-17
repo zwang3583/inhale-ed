@@ -39,12 +39,12 @@
             <v-list-item-title>Info</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item link>
+        <v-list-item :to = "{ path: 'weather'}">
           <v-list-item-action>
-            <v-icon>mdi-smoking</v-icon>
+            <v-icon>mdi-weather-cloudy</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>Do You Smoke?</v-list-item-title>
+            <v-list-item-title> Weather </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -113,7 +113,7 @@
         class="fill-height"
         fluid
       >
-      <h1>Info</h1>
+      <Information />
       </v-container>
     </v-content>
 
@@ -124,6 +124,7 @@
 </template>
 
 <script>
+  import Information from '../components/Information'
   export default {
     props: {
       source: String,
@@ -134,7 +135,7 @@
     }),
 
     components: {
-      //
+      Information
     }
   }
 </script>

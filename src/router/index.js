@@ -14,8 +14,13 @@ const router = new Router({
     },
     {
       path: "/doctor",
-      name: "docor",
+      name: "doctor",
       component: () => import("../views/DoctorUI"),
+    },
+    {
+      path: "/weather",
+      name: "weather",
+      component: () => import("../views/Weather.vue")
     },
     {
       path: "/calendar",
