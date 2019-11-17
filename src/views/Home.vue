@@ -39,7 +39,7 @@
             <v-list-item-title>Info</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item :to = "{ path: 'weather'}">
+        <v-list-item :to="{ path: 'weather'}">
           <v-list-item-action>
             <v-icon>mdi-weather-cloudy</v-icon>
           </v-list-item-action>
@@ -107,7 +107,7 @@
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-toolbar-title>Inhale-ED</v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn icon :to = "{ path: 'doctor'}">
+      <v-btn icon :to ="{ path: 'doctor'}">
         <v-icon>mdi-doctor</v-icon>
       </v-btn>
     </v-app-bar>

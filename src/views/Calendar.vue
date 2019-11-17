@@ -36,7 +36,7 @@
             <v-list-item-title>Info</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item :to = "{ path: 'weather'}">
+        <v-list-item :to ="{ path: 'weather'}">
           <v-list-item-action>
             <v-icon>mdi-weather-cloudy</v-icon>
           </v-list-item-action>

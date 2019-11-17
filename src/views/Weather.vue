@@ -117,7 +117,7 @@
         class="fill-height"
         fluid
       >
-      <AirQuality />
+      <h1>Weather!</h1>
       </v-container>
     </v-content>
 
@@ -128,20 +128,17 @@
 </template>
 
 <script>
-  import AirQuality from '../components/AirQuality'
-	export default{
-		name: "Weather",
-		    props: {
+  export default {
+    props: {
       source: String,
     },
 
     data: () => ({
       drawer: null,
     }),
-		components: {
-			AirQuality
-		}
-	}
 
-
+    components: {
+      //
+    }
+  }
 </script>
