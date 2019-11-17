@@ -113,7 +113,7 @@
         class="fill-height"
         fluid
       >
-      <h1>ADD STUFF HERE</h1>
+      <h1>HowTo</h1>
       </v-container>
     </v-content>
 

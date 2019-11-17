@@ -13,9 +13,19 @@ const router = new Router({
       component: () => import("../views/Home.vue"),
     },
     {
-      path: "/about",
-      name: "about",
-      component: () => import("../views/About.vue"),
+      path: "/calendar",
+      name: "calendar",
+      component: () => import("../views/Calendar.vue"),
+    },
+    {
+      path: "/info",
+      name: "info",
+      component: () => import("../views/Info.vue"),
+    },
+    {
+      path: "/howto",
+      name: "HowTo",
+      component: () => import("../views/HowTo.vue"),
     },
   ]
 });
