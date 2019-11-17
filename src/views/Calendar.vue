@@ -113,7 +113,7 @@
         class="fill-height"
         fluid
       >
-      <h1>Calendar</h1>
+      <Calendar/>
       </v-container>
     </v-content>
 
@@ -124,6 +124,7 @@
 </template>
 
 <script>
+  import Calendar from '../components/Calendar'
   export default {
     props: {
       source: String,
@@ -134,7 +135,7 @@
     }),
 
     components: {
-      //
+      Calendar
     }
   }
 </script>
