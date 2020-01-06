@@ -1,6 +1,9 @@
 <template>
   <v-app>
     <router-view />
+    <v-footer app>
+      <span>&copy; BostonHacks 2019</span>
+    </v-footer>
   </v-app>
 </template>
 
