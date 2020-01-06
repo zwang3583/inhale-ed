@@ -23,14 +23,6 @@ export default{
 	props: {
 		patient: Object
 	},
-	data() {
-		return {
-			inhalerFreq: [0, 2, 5, 9, 5, 10, 3, 5, -4, -10, 1, 8, 2, 9, 0],
-			condition: [0, 2, 5, 9, 5, 10, 3, 5, -4, -10, 1, 8, 2, 9, 0],
-			smokeFreq: [0, 2, 5, 9, 5, 10, 3, 5, -4, -10, 1, 8, 2, 9, 0]
-
-		}
-	},
 	
 }
 </script>
