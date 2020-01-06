@@ -1,12 +1,9 @@
 <template>
-  <v-container>
-    <h1>The key is: {{key}}</h1>
-    <v-row>
-      <v-col class="sm-2">
-        <span id="city-aqi-container"></span>
-      </v-col>
-    </v-row>
-  </v-container>
+  <v-row>
+    <v-col class="sm-2">
+      <span id="city-aqi-container"></span>
+    </v-col>
+  </v-row>
 </template>
 
 
@@ -18,7 +15,7 @@ _aqiFeed({
 });
 
 export default {
-  name: "AirQuality",
+  name: "AirQuality"
 };
 </script>
 
