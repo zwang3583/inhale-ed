@@ -4,7 +4,7 @@
 	<v-row class='sm-6'>
 	<v-col>
 	<h1>Patients</h1>
-	  <div v-for="patient in mainItems">
+	  <div :v-for="patient in mainItems">
 	  	<v-row  @click="changePatient(patient)">
 
 	  		<v-col>{{patient.firstName}}</v-col>
