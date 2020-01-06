@@ -22,8 +22,7 @@ export default {
 
 
 <style scoped>
-.v-row,
-.container {
+.v-row,.container {
   height: 100%;
 }
 </style>
