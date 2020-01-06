@@ -8,14 +8,15 @@
 
 
 <script>
-_aqiFeed({
-  display: "%details",
-  container: "city-aqi-container",
-  city: "boston"
-});
-
 export default {
-  name: "AirQuality"
+  name: "AirQuality",
+  mounted() {
+    _aqiFeed({
+      display: "%details",
+      container: "city-aqi-container",
+      city: "boston"
+    });
+  }
 };
 </script>
 

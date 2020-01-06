@@ -1,40 +1,47 @@
 <template>
-  <v-app id="inspire">
-
-
-
-
-
-   <AirQuality/>
-
-    <v-content>
-      <v-container
-        class="fill-height"
-        fluid
-      >
+  <v-container>
+    <v-row>
+      <v-col>
+        <AirQuality />
+      </v-col>
+      <v-col>
+        Hello
+      </v-col>
       
-      </v-container>
-    </v-content>
+    </v-row>
 
-    <v-footer app>
-      <span>&copy; BostonHacks 2019</span>
-    </v-footer>
-  </v-app>
+    <v-row>
+      <v-col class="sm-10">
+        <gmap />
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
-  import AirQuality from '../components/AirQuality'
-  export default {
-    props: {
-      source: String,
-    },
+import AirQuality from "../components/AirQuality";
+import gmap from "../components/gmap";
+export default {
+  props: {
+    source: String
+  },
 
-    data: () => ({
-      drawer: null,
-    }),
+  data: () => ({
+    drawer: null
+  }),
 
-    components: {
-      AirQuality
-    }
+  components: {
+    AirQuality,
+    gmap
   }
+};
 </script>
+
+<style scoped>
+.container {
+  height: 100%;
+}
+.row {
+  height: 50%;
+}
+</style>
