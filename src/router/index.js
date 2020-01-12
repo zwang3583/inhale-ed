@@ -23,11 +23,6 @@ const router = new Router({
       component: () => import("../views/Weather.vue")
     },
     {
-      path: "/calendar",
-      name: "calendar",
-      component: () => import("../views/Calendar.vue"),
-    },
-    {
       path: "/info",
       name: "info",
       component: () => import("../views/Info.vue"),

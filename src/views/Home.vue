@@ -1,27 +1,31 @@
 <template>
-  <v-app id="inspire">
+  <v-app>
     <v-content>
-      <v-container
-        class="fill-height"
-        fluid
-      >
-      <h1>Hi! Welcome to Inhale-ED!</h1>
-      </v-container>
+      <v-row>
+        <v-container>
+        <Calendar />
+        </v-container>
+      </v-row>
+      <v-row>
+        <AirQuality />
+      </v-row>
     </v-content>
-
-    <v-footer app>
-      <span>&copy; BostonHacks 2019</span>
-    </v-footer>
   </v-app>
 </template>
 
 <script>
-  export default {
-    props: {
-      source: String,
-    },
-    components: {
-      //
-    }
+import AirQuality from "../components/AirQuality";
+import Calendar from "../components/Calendar";
+export default {
+  components: {
+    AirQuality,
+    Calendar
   }
+};
 </script>
+
+<style scoped>
+.row{
+  height: 100vh;
+}
+</style>
