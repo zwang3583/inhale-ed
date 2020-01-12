@@ -12,12 +12,12 @@
         </v-list-item-content>
       </v-list-item>
       <v-list dense>
-        <v-list-item :to="{ path: 'calendar' }">
+        <v-list-item :to="{ path: '/' }">
           <v-list-item-action>
-            <v-icon>mdi-calendar-month-outline</v-icon>
+            <v-icon>mdi-home</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>Calendar</v-list-item-title>
+            <v-list-item-title>Home</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
         <v-list-item :to="{ path: 'howto' }">
@@ -34,14 +34,6 @@
           </v-list-item-action>
           <v-list-item-content>
             <v-list-item-title>About Asthma</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item :to="{ path: 'weather'}">
-          <v-list-item-action>
-            <v-icon>mdi-weather-cloudy</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title>Weather</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>

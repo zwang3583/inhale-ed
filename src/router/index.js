@@ -18,11 +18,6 @@ const router = new Router({
       component: () => import("../views/DoctorUI.vue"),
     },
     {
-      path: "/weather",
-      name: "weather",
-      component: () => import("../views/Weather.vue")
-    },
-    {
       path: "/info",
       name: "info",
       component: () => import("../views/Info.vue"),
@@ -31,11 +26,6 @@ const router = new Router({
       path: "/howto",
       name: "HowTo",
       component: () => import("../views/HowTo.vue"),
-    },
-    {
-      path: "/weather",
-      name: "weather",
-      component: () => import("../views/Weather.vue"),
     },
   ]
 });
