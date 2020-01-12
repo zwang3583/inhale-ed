@@ -25,11 +25,6 @@ export default {
   props: {
     source: String
   },
-
-  data: () => ({
-    drawer: null
-  }),
-
   components: {
     AirQuality,
     gmap
