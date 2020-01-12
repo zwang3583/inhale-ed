@@ -11,9 +11,6 @@
 <script>
 import Information from "../components/Information";
 export default {
-  props: {
-    source: String
-  },
   components: {
     Information
   }

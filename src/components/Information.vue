@@ -53,6 +53,17 @@
 
       <p>You can breathe in some medicines through an inhaler or take other medicines as pills. Asthma medicines come in two types-quick-relief and long-term control. Quick-relief medicines control the symptoms of an asthma attack. Long-term control medicines help you have fewer and milder attacks, but they don't help you while you are having an asthma attack.</p>
     </v-container>
+    <v-container class="fill-height" fluid>
+      <h2 id="four">How do I use my inhaler?</h2>
+      <iframe
+        width="100%"
+        height="100%"
+        src="https://www.youtube.com/embed/Rdb3p9RZoR4"
+        frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </v-container>
   </v-container>
 </template>
 
@@ -61,3 +72,9 @@ export default {
   name: "Information"
 };
 </script>
+
+<style scoped>
+iframe{
+  height: 80vh
+}
+</style>

@@ -22,11 +22,6 @@ const router = new Router({
       name: "info",
       component: () => import("../views/Info.vue"),
     },
-    {
-      path: "/howto",
-      name: "HowTo",
-      component: () => import("../views/HowTo.vue"),
-    },
   ]
 });
 

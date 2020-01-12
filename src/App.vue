@@ -20,14 +20,6 @@
             <v-list-item-title>Home</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item :to="{ path: 'howto' }">
-          <v-list-item-action>
-            <v-icon>mdi-comment-question-outline</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title>How To</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
         <v-list-item :to="{ path: 'info' }">
           <v-list-item-action>
             <v-icon>mdi-information-outline</v-icon>
