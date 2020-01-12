@@ -1,28 +1,43 @@
 <template>
-  <v-row>
-    <v-col class="sm-2">
-      <span id="city-aqi-container"></span>
-    </v-col>
-  </v-row>
+  <v-container>
+    <v-row>
+      <v-col>
+        <Widget />
+      </v-col>
+      <v-col>
+        Hello
+      </v-col>
+      
+    </v-row>
+
+    <v-row>
+      <v-col class="sm-10">
+        <gmap />
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
-
 <script>
+import Widget from "./Widget";
+import gmap from "./gmap";
 export default {
-  name: "AirQuality",
-  mounted() {
-    _aqiFeed({
-      display: "%details",
-      container: "city-aqi-container",
-      city: "boston"
-    });
+name: 'AirQuality',
+  props: {
+    source: String
+  },
+  components: {
+    Widget,
+    gmap
   }
 };
 </script>
 
-
 <style scoped>
-.v-row,.container {
+.container {
   height: 100%;
+}
+.row {
+  height: 50%;
 }
 </style>
