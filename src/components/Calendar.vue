@@ -1,5 +1,5 @@
 <template>
-  <v-row class="fill-height">
+  <v-row >
     <v-col>
       <v-sheet height="64">
         <v-toolbar flat color="black">
@@ -66,7 +66,7 @@
           </v-container>
         </v-card>
       </v-dialog>
-      <v-sheet height="600">
+      <v-sheet >
         <v-calendar
           ref="calendar"
           v-model="focus"
@@ -305,3 +305,9 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+#calendar, div.row, .col, .v-sheet{
+  height: 95%;
+}
+</style>
